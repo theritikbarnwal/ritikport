@@ -65,34 +65,82 @@ body {
     border: 1.9px solid white;
 }
 
-.logo 
-{
-    font-size: 15px;
-    margin: 0 15px;
-    color: #ffffff;
+
+
+
+
+.logo {
+  --border-right: 4px;
+  --text-stroke-color: rgba(255, 255, 255, 0.5);
+  --animation-color: var(--mainlogo, #37FF8B); /* fallback color */
+  --fs-size: 1.8em;
+
+  position: relative;
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: var(--fs-size);
+  font-family: monospace;
+  letter-spacing: 2px;
+  border: 2px solid var(--animation-color);
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  color: transparent;
+  text-decoration: none;
 }
 
-.logo:hover 
-{
-    color: var(--headlink);
-    font-style: italic;
-    font-family: monospace;
+/* Hover animation text layer */
+.logo .hover-text {
+  position: absolute;
+  content: attr(data-text);
+  inset: 0;
+  width: 0%;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--animation-color);
+  -webkit-text-stroke: 1px var(--animation-color);
+  border-right: var(--border-right) solid var(--animation-color);
+  transition: width 0.4s ease;
+  z-index: 2;
+  pointer-events: none;
 }
+
+/* Animate width on hover */
+.logo:hover .hover-text {
+  width: 100%;
+}
+
+/* Optional scaling */
+.logo:hover {
+  transform: scale(1.05);
+  transition: transform 1s ease;
+  color: var(--animation-color);
+  font-style: italic;
+
+}
+
+
+
 
 .header .nav a {
     font-size: 20px;
     margin: 0 15px;
     color: #ffffff;
     display: inline-block;
+    transition: all 0.3s ease;
 }
 
-.header .nav a:hover 
-{
+.header .nav a:hover {
     color: var(--mainlogo);
     transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.1);  /* Glass blur effect */
+    backdrop-filter: blur(8px);           /* Blur */
+    padding: 8px 12px;
+    border-radius: 12px;                  /* Rounded rectangle */
+    box-shadow: var(--box-shadow);        /* Optional shadow */
+    transition: all 0.2s ease;
 }
-
-
 
 /* Main Content */
 .main {
