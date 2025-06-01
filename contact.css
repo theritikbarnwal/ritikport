@@ -134,11 +134,6 @@ body {
 .header .nav a:hover {
     color: var(--mainlogo);
     transform: translateY(-3px);
-    background: rgba(255, 255, 255, 0.1);  /* Glass blur effect */
-    backdrop-filter: blur(8px);           /* Blur */
-    padding: 8px 12px;
-    border-radius: 12px;                  /* Rounded rectangle */
-    box-shadow: var(--box-shadow);        /* Optional shadow */
     transition: all 0.2s ease;
 }
 
