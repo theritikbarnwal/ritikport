@@ -328,48 +328,57 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function (e) {
             e.preventDefault();
-            
+
             const submitButton = contactForm.querySelector('.submit-button');
             const originalText = submitButton.querySelector('.button-text').textContent;
-            
+
             submitButton.querySelector('.button-text').textContent = 'sending...';
             submitButton.disabled = true;
             submitButton.style.opacity = '0.7';
-            
+
             const formData = {
                 name: contactForm.querySelector('input[name="name"]').value,
                 email: contactForm.querySelector('input[name="email"]').value,
                 message: contactForm.querySelector('textarea[name="message"]').value
             };
 
-            emailjs.send('EMAILJS_SERVICE_ID', 'EMAILJS_TEMPLATE_ID', formData)
-                .then(() => {
+            try {
+                const response = await fetch('/api/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
                     submitButton.querySelector('.button-text').textContent = 'message sent!';
                     submitButton.style.background = '#4ade80';
                     contactForm.reset();
-                    
-                    setTimeout(() => {
-                        submitButton.querySelector('.button-text').textContent = originalText;
-                        submitButton.disabled = false;
-                        submitButton.style.opacity = '1';
-                        submitButton.style.background = '';
-                    }, 2000);
-                }, (error) => {
-                    console.error('EmailJS error:', error);
+                } else {
+                    console.error('Server error:', result);
                     submitButton.querySelector('.button-text').textContent = 'error!';
                     submitButton.style.background = '#ef4444';
-                    
-                    setTimeout(() => {
-                        submitButton.querySelector('.button-text').textContent = originalText;
-                        submitButton.disabled = false;
-                        submitButton.style.opacity = '1';
-                        submitButton.style.background = '';
-                    }, 2000);
-                });
+                }
+            } catch (error) {
+                console.error('Fetch error:', error);
+                submitButton.querySelector('.button-text').textContent = 'error!';
+                submitButton.style.background = '#ef4444';
+            }
+
+            setTimeout(() => {
+                submitButton.querySelector('.button-text').textContent = originalText;
+                submitButton.disabled = false;
+                submitButton.style.opacity = '1';
+                submitButton.style.background = '';
+            }, 2000);
         });
     }
+
 
     const enhancedElements = document.querySelectorAll('.nav-link, .contact-link, .submit-button, .skill-item');
     enhancedElements.forEach(el => {
