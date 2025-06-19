@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritik Barnwal - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <button id="darkModeToggle" class="dark-mode-toggle">
+        <span class="toggle-text">dark</span>
+    </button>
+
+    <div id="backToTop" class="back-to-top">
+        <span class="back-to-top-icon">↑</span>
+    </div>
+
+    <nav class="navigation fade-in">
+        <div class="nav-container">
+            <a href="#about" class="nav-link">about</a>
+            <a href="#projects" class="nav-link">projects</a>
+            <a href="#skills" class="nav-link">skills</a>
+            <a href="#contact" class="nav-link">contact</a>
+        </div>
+    </nav>
+
+    <header class="header fade-in">
+        <h1 class="name">Ritik Barnwal</h1>
+        <p class="title">Aspiring Automation Engineer.</p>
+        <div class="contact">
+            <a href="mailto:[email protected]">mail</a>
+            <a href="https://github.com/theritikbarnwal">github</a>
+            <a href="https://linkedin.com/in/theritikbarnwal">linkedin</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="section fade-in">
+            <h2 class="section-title">about</h2>
+            <p class="about">
+                Hi, I'm Ritik Barnwal, an aspiring Automation Engineer from India with a passion for coding and technology. I have a keen interest in automation scripts, web applications, and system optimization. In my free time, I enjoy working on personal projects, contributing to open-source, and exploring new programming languages. I'm always looking for new challenges and opportunities to collaborate with other developers. If you're interested in working together or just want to chat about tech, feel free to reach out. I love connecting with fellow developers and sharing knowledge, so don't hesitate to drop me a message.
+            </p>
+        </section>
+
+        <section id="projects" class="section fade-in">
+            <h2 class="section-title">projects</h2>
+            <div class="projects-grid">
+                <div class="project" data-tech="js python">
+                    <div class="project-header">
+                        <div class="project-name">
+                            <a href="https://github.com/theritikbarnwal/sn-automate">SN_AUTOMATE</a>
+                        </div>
+                        <span class="project-tech">js | python</span>
+                    </div>
+                    <div class="project-description">
+                        Developed separate job listing scrapers using Playwright in JavaScript and Python to extract roles, locations, experience, and descriptions from ServiceNow's careers page. Each version runs independently, automated via GitHub Actions, storing results in JSON format. Achieved reliable, hands-free job data collection with scheduled updates every Monday.
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/theritikbarnwal/sn-automate" class="project-link">
+                            <span class="link-icon">🔗</span> github
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project" data-tech="python js">
+                    <div class="project-header">
+                        <div class="project-name">
+                            <a href="https://github.com/theritikbarnwal/servicenow">ServiceNow</a>
+                        </div>
+                        <span class="project-tech">python | js</span>
+                    </div>
+                    <div class="project-description">
+                        Built a job listing scraper in Python to extract roles, locations, experience, and descriptions from ServiceNow's careers page. Collected and structured the job data into JSON format for easy analysis and use.
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/theritikbarnwal/servicenow" class="project-link">
+                            <span class="link-icon">🔗</span> github
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project" data-tech="html css js">
+                    <div class="project-header">
+                        <div class="project-name">
+                            <a href="https://github.com/theritikbarnwal/github-repo-search">Github Repo Search</a>
+                        </div>
+                        <span class="project-tech">html | css | js</span>
+                    </div>
+                    <div class="project-description">
+                        Built a responsive web application using HTML, CSS, and JavaScript to search GitHub repositories by username and repository name. The app fetches real-time data from the GitHub REST API, displaying details like stars, forks, language, and activity timestamps.
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/theritikbarnwal/github-repo-search" class="project-link">
+                            <span class="link-icon">🔗</span> github
+                        </a>
+                        <a href="https://theritikbarnwal.github.io/github-repo-search" class="project-link demo-link">
+                            <span class="link-icon">🚀</span> website
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section fade-in">
+            <h2 class="section-title">skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Python</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">JavaScript</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">HTML/CSS</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">C++</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Frameworks & Tools</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Git</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">VS Code</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Jenkins</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">bash</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section fade-in">
+            <h2 class="section-title">get in touch</h2>
+            <div class="contact-section">
+                <div class="contact-info">
+                    <p>Got an idea or feedback? Drop me a message</p>
+                    <div class="contact-links">
+                        <a href="mailto:[email protected]" class="contact-link">
+                            <span class="contact-icon">✉</span> [email protected]
+                        </a>
+                        <a href="https://github.com/theritikbarnwal" class="contact-link">
+                            <span class="contact-icon">🐱</span> github.com/theritikbarnwal
+                        </a>
+                        <a href="https://linkedin.com/in/theritikbarnwal" class="contact-link">
+                            <span class="contact-icon">💼</span> linkedin.com/in/theritikbarnwal
+                        </a>
+                    </div>
+                </div>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">
+                        <span class="button-text">send message</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer fade-in">
+        <p>copyright &copy; <span id="currentYear"></span> • Ritik Barnwal •</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
