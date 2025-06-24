@@ -334,7 +334,7 @@ body.dark-mode .navigation {
     flex: 1;
 }
 
-.project-name a {
+.project-name h1 {
     font-size: 18px;
     font-weight: 600;
     color: var(--primary-text);
