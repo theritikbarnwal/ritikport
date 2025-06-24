@@ -674,6 +674,8 @@ body.dark-mode .demo-button:hover {
     body {
         padding: 40px 20px;
         font-size: 14px;
+        margin-left: 12px;
+        margin-right: 15px;
     }
     
     .navigation {
@@ -724,6 +726,11 @@ body.dark-mode .demo-button:hover {
         grid-template-columns: 1fr;
         gap: 40px;
     }
+
+    #contact{
+        font-size: 13.90px;
+        gap: 10px;
+    }
     
     .misc-grid {
         grid-template-columns: 1fr;
@@ -742,9 +749,11 @@ body.dark-mode .demo-button:hover {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 450px) {
     body {
         padding: 30px 15px;
+        margin-left: 12px;
+        margin-right: 15px;
     }
     
     .name {
@@ -759,6 +768,15 @@ body.dark-mode .demo-button:hover {
     .section {
         margin-bottom: 50px;
     }
+
+    .navigation {
+        position: relative;
+        left: auto;
+        right: auto;
+        transform: none;
+        margin: 0 auto 40px auto;
+        width: fit-content;
+    }
     
     .nav-container {
         gap: 8px;
@@ -767,6 +785,11 @@ body.dark-mode .demo-button:hover {
     .nav-link {
         font-size: 12px;
         padding: 5px 10px;
+    }
+
+    #contact{
+        font-size: 13.90px;
+        gap: 10px;
     }
 }
 
@@ -915,4 +938,4 @@ body.dark-mode .misc-item {
 
 body.dark-mode .footer {
     border-top-color: var(--border-color);
-}
+}   
